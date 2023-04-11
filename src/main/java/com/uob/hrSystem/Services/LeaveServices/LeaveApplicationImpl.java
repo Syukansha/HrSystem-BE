@@ -20,7 +20,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
 //  employee
     @Override
     public Employee registerEmpployee(Employee employee) {
-        employee = new Employee(employee.getEmployeeId(),employee.getName(),employee.getEmail(),employee.getPassword());
+        employee = new Employee(employee.getEmployeeId(),employee.getName(),employee.getEmail(),employee.getPassword(),employee.getPosition());
         return employeeRepository.save(employee);
     }
 
