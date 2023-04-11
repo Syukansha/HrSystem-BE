@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Getter
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
     private String name;
 

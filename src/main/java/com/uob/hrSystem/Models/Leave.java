@@ -16,7 +16,7 @@ import java.util.Date;
 @Setter
 public class Leave {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int leaveId;
     @OneToOne
     @JoinColumn(name = "employeeId", referencedColumnName = "employeeId")
