@@ -22,5 +22,6 @@ public class Employee {
     private String email;
     private String password;
     private String position;
+    private int annualLeave;
 
 }
