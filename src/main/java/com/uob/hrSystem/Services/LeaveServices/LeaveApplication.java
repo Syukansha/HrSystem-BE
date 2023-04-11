@@ -14,6 +14,7 @@ public interface LeaveApplication {
 
 //    Leave
     public Leave requestLeave(int id,Leave leave);
+    public Leave updateStatus(int svId,int empId,int leaveId, Leave leave);
     public void addLeaveType(LeaveTypeCategory leaveTypeCategory);
     public Iterable<LeaveTypeCategory> getLeaveTypes();
 }

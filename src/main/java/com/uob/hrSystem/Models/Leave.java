@@ -24,7 +24,9 @@ public class Leave {
     private Date startDate;
     private Date endDate;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Status")
+    private Status status;
     private String description;
 
 
