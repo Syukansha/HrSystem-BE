@@ -23,5 +23,8 @@ public class Employee {
     private String password;
     private String position;
     private int annualLeave;
+    private int phoneNum;
+
+    private String reportTo;
 
 }

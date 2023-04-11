@@ -26,6 +26,6 @@ public class Leave {
 
     private String status;
     private String description;
-    private int phoneNum;
+
 
 }
