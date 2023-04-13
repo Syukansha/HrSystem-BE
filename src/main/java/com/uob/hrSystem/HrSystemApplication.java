@@ -1,6 +1,6 @@
 package com.uob.hrSystem;
 
-import com.uob.hrSystem.Models.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
 import com.uob.hrSystem.Services.LeaveServices.LeaveApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

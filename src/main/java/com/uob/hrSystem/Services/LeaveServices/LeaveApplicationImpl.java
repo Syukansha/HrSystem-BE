@@ -1,7 +1,11 @@
 package com.uob.hrSystem.Services.LeaveServices;
 
 import com.uob.hrSystem.Exception.NotFoundException;
-import com.uob.hrSystem.Models.*;
+import com.uob.hrSystem.Models.Employee.Employee;
+import com.uob.hrSystem.Models.Leave.Leave;
+import com.uob.hrSystem.Models.Leave.LeaveType;
+import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.Status;
 import com.uob.hrSystem.Repositories.Employee.EmployeeRepository;
 import com.uob.hrSystem.Repositories.Leave.LeaveCategoryRepository;
 import com.uob.hrSystem.Repositories.Leave.LeaveRepository;
@@ -43,7 +47,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
 
     //    Leave
     @Override
-    public Leave requestLeave(int id,Leave leave) {
+    public Leave requestLeave(int id, Leave leave) {
 
         Optional<Employee> employeeData = employeeRepository.findById(id);
         if(employeeData.isPresent()){

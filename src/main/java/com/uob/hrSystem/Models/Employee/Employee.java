@@ -1,4 +1,4 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,18 +8,23 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ADMIN")
+@Table(name = "EMPLOYEE")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
-public class Admin {
+@Getter
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int adminId;
+    private int employeeId;
     private String name;
-    private int phoneNum;
+
     private String email;
     private String password;
     private String position;
+    private int annualLeave;
+    private int phoneNum;
+
+    private String reportTo;
+
 }

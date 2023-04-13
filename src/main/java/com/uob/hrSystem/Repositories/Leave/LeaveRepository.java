@@ -1,6 +1,6 @@
 package com.uob.hrSystem.Repositories.Leave;
 
-import com.uob.hrSystem.Models.Leave;
+import com.uob.hrSystem.Models.Leave.Leave;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
