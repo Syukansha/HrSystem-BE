@@ -1,8 +1,8 @@
 package com.uob.hrSystem.Controllers;
 
-import com.uob.hrSystem.Models.Employee;
-import com.uob.hrSystem.Models.Leave;
-import com.uob.hrSystem.Models.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Accounts.Employee;
+import com.uob.hrSystem.Models.Leave.Leave;
+import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
 import com.uob.hrSystem.Repositories.Leave.LeaveRepository;
 import com.uob.hrSystem.Services.LeaveServices.LeaveApplication;
 import org.springframework.beans.factory.annotation.Autowired;

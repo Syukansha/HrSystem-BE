@@ -1,9 +1,8 @@
 package com.uob.hrSystem.Services.LeaveServices;
 
-import com.uob.hrSystem.Models.Employee;
-import com.uob.hrSystem.Models.Leave;
-import com.uob.hrSystem.Models.LeaveTypeCategory;
-import org.springframework.stereotype.Service;
+import com.uob.hrSystem.Models.Accounts.Employee;
+import com.uob.hrSystem.Models.Leave.Leave;
+import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
 
 
 public interface LeaveApplication {
