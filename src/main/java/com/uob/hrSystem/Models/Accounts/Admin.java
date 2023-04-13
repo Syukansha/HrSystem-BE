@@ -1,4 +1,4 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Accounts;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,19 +8,18 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "LEAVE_CATEGORY")
+@Table(name = "ADMIN")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class LeaveTypeCategory {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int typeId;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "Type")
-    private LeaveType leaveType;
-
-
+    private int adminId;
+    private String name;
+    private int phoneNum;
+    private String email;
+    private String password;
+    private String position;
 }

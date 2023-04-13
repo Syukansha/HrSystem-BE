@@ -1,5 +1,6 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Leave;
 
+import com.uob.hrSystem.Models.Accounts.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

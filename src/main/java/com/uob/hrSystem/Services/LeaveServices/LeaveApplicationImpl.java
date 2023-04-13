@@ -1,7 +1,11 @@
 package com.uob.hrSystem.Services.LeaveServices;
 
 import com.uob.hrSystem.Exception.NotFoundException;
-import com.uob.hrSystem.Models.*;
+import com.uob.hrSystem.Models.Accounts.Employee;
+import com.uob.hrSystem.Models.Leave.Leave;
+import com.uob.hrSystem.Models.Leave.LeaveType;
+import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.Status;
 import com.uob.hrSystem.Repositories.Employee.EmployeeRepository;
 import com.uob.hrSystem.Repositories.Leave.LeaveCategoryRepository;
 import com.uob.hrSystem.Repositories.Leave.LeaveRepository;
@@ -29,7 +33,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
 //  employee
     @Override
     public Employee registerEmpployee(Employee employee) {
-        employee = new Employee(employee.getEmployeeId(),employee.getName(),employee.getEmail(),employee.getPassword(),employee.getPosition(),employee.getAnnualLeave(),employee.getPhoneNum(),employee.getReportTo());
+        employee = new Employee(employee.getEmployeeId(),employee.getUsername(),employee.getEmail(),employee.getPassword(),employee.getPosition(),employee.getAnnualLeave(),employee.getPhoneNum(),employee.getReportTo());
         return employeeRepository.save(employee);
     }
 
@@ -43,7 +47,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
 
     //    Leave
     @Override
-    public Leave requestLeave(int id,Leave leave) {
+    public Leave requestLeave(int id, Leave leave) {
 
         Optional<Employee> employeeData = employeeRepository.findById(id);
         if(employeeData.isPresent()){
@@ -66,7 +70,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
             Employee sv = (Employee) svData.get();
             Leave _leave = (Leave) leaveData.get();
 
-            if(emp.getReportTo().equalsIgnoreCase(sv.getName())){
+            if(emp.getReportTo().equalsIgnoreCase(sv.getUsername())){
                 _leave.setStatus(Status.APPROVED);
                 return leaveRepository.save(_leave);
             }
