@@ -4,7 +4,7 @@ import com.uob.hrSystem.Exception.NotFoundException;
 import com.uob.hrSystem.Models.Accounts.Employee;
 import com.uob.hrSystem.Models.Leave.Leave;
 import com.uob.hrSystem.Models.Leave.LeaveType;
-import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 import com.uob.hrSystem.Models.Leave.Status;
 import com.uob.hrSystem.Repositories.Employee.EmployeeRepository;
 import com.uob.hrSystem.Repositories.Leave.LeaveCategoryRepository;
@@ -33,7 +33,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
 //  employee
     @Override
     public Employee registerEmpployee(Employee employee) {
-        employee = new Employee(employee.getEmployeeId(),employee.getUsername(),employee.getEmail(),employee.getPassword(),employee.getPosition(),employee.getAnnualLeave(),employee.getPhoneNum(),employee.getReportTo());
+        employee = new Employee(employee.getEmployeeId(),employee.getName(),employee.getUsername(),employee.getEmail(),employee.getPassword(),employee.getPosition(),employee.getAnnualLeave(),employee.getPhoneNum(),employee.getReportTo());
         return employeeRepository.save(employee);
     }
 
@@ -53,7 +53,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
         if(employeeData.isPresent()){
             Employee emp = employeeData.get();
 
-            leave = new Leave(leave.getLeaveId(),emp, leave.getStartDate(),leave.getEndDate(), Status.PENDING,leave.getDescription());
+            leave = new Leave(leave.getLeaveId(),emp, leave.getStartDate(),leave.getEndDate(),leave.getApplyDate(),leave.getRejectDate(), leave.getApprovedBy(), leave.getRejectedBy(), Status.PENDING,leave.getDescription());
             return leaveRepository.save(leave);
         }
         else throw new NotFoundException("Have problem while trying to register leave");
@@ -91,16 +91,16 @@ public class LeaveApplicationImpl implements LeaveApplication{
     }
 
     @Override
-    public void addLeaveType(LeaveTypeCategory leaveTypeCategory) {
-        leaveCategoryRepository.save(new LeaveTypeCategory(leaveTypeCategory.getTypeId(), LeaveType.ANNUAL_LEAVE));
-        leaveCategoryRepository.save(new LeaveTypeCategory(leaveTypeCategory.getTypeId(), LeaveType.EMERGENCY_LEAVE));
-        leaveCategoryRepository.save(new LeaveTypeCategory(leaveTypeCategory.getTypeId(), LeaveType.SICK_LEAVE));
-        leaveCategoryRepository.save(new LeaveTypeCategory(leaveTypeCategory.getTypeId(), LeaveType.WORK_FROM_HOME));
-        leaveCategoryRepository.save(new LeaveTypeCategory(leaveTypeCategory.getTypeId(), LeaveType.BLOCKED_LEAVE));
+    public void addLeaveType(LeaveDetails leaveTypeCategory) {
+        leaveCategoryRepository.save(new LeaveDetails(leaveTypeCategory.getTypeId(), LeaveType.ANNUAL_LEAVE));
+        leaveCategoryRepository.save(new LeaveDetails(leaveTypeCategory.getTypeId(), LeaveType.EMERGENCY_LEAVE));
+        leaveCategoryRepository.save(new LeaveDetails(leaveTypeCategory.getTypeId(), LeaveType.SICK_LEAVE));
+        leaveCategoryRepository.save(new LeaveDetails(leaveTypeCategory.getTypeId(), LeaveType.WORK_FROM_HOME));
+        leaveCategoryRepository.save(new LeaveDetails(leaveTypeCategory.getTypeId(), LeaveType.BLOCKED_LEAVE));
     }
 
     @Override
-    public Iterable<LeaveTypeCategory> getLeaveTypes() {
+    public Iterable<LeaveDetails> getLeaveTypes() {
         return leaveCategoryRepository.findAll();
     }
 }

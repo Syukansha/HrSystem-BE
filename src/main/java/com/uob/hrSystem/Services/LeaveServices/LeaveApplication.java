@@ -2,7 +2,7 @@ package com.uob.hrSystem.Services.LeaveServices;
 
 import com.uob.hrSystem.Models.Accounts.Employee;
 import com.uob.hrSystem.Models.Leave.Leave;
-import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 
 
 public interface LeaveApplication {
@@ -14,6 +14,6 @@ public interface LeaveApplication {
 //    Leave
     public Leave requestLeave(int id,Leave leave);
     public Leave updateStatus(int svId,int empId,int leaveId, Leave leave);
-    public void addLeaveType(LeaveTypeCategory leaveTypeCategory);
-    public Iterable<LeaveTypeCategory> getLeaveTypes();
+    public void addLeaveType(LeaveDetails leaveTypeCategory);
+    public Iterable<LeaveDetails> getLeaveTypes();
 }

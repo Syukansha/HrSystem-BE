@@ -1,7 +1,7 @@
 package com.uob.hrSystem;
 
 import com.uob.hrSystem.Models.Accounts.Employee;
-import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 import com.uob.hrSystem.Repositories.Employee.EmployeeRepository;
 import com.uob.hrSystem.Services.LeaveServices.LeaveApplication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +24,10 @@ public class HrSystemApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		LeaveTypeCategory leaveTypeCategory = new LeaveTypeCategory();
+		LeaveDetails leaveTypeCategory = new LeaveDetails();
 		leaveApplication.addLeaveType(leaveTypeCategory);
 
-		employeeRepository.save(new Employee("user","user@gmail.com","$2a$12$7Xv1901WPmfVjJBpvSNmNudf1ORnN89RBHtoaa81qdnLpuUxR6gPu","USER",25,12312434,"CEO"));
+		employeeRepository.save(new Employee("user","user","user@gmail.com","$2a$12$7Xv1901WPmfVjJBpvSNmNudf1ORnN89RBHtoaa81qdnLpuUxR6gPu","USER",25,12312434,"CEO"));
 
 	}
 }

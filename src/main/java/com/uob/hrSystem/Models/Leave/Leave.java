@@ -16,6 +16,8 @@ import java.util.Date;
 @Getter
 @Setter
 public class Leave {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int leaveId;
@@ -24,6 +26,11 @@ public class Leave {
     private Employee employee;
     private Date startDate;
     private Date endDate;
+
+    private Date applyDate;
+    private Date rejectDate;
+    private String ApprovedBy;
+    private String rejectedBy;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "Status")

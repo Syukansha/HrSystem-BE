@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class LeaveTypeCategory {
+public class LeaveDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int typeId;

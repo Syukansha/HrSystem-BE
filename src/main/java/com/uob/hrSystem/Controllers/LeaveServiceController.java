@@ -2,7 +2,7 @@ package com.uob.hrSystem.Controllers;
 
 import com.uob.hrSystem.Models.Accounts.Employee;
 import com.uob.hrSystem.Models.Leave.Leave;
-import com.uob.hrSystem.Models.Leave.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 import com.uob.hrSystem.Repositories.Leave.LeaveRepository;
 import com.uob.hrSystem.Services.LeaveServices.LeaveApplication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +51,7 @@ public class LeaveServiceController {
 
 //    Leave
     @GetMapping("/leave-types")
-    private ResponseEntity<Iterable<LeaveTypeCategory>> getLeaveTypes(){
+    private ResponseEntity<Iterable<LeaveDetails>> getLeaveTypes(){
         try {
             return ResponseEntity.ok().body(leaveApplication.getLeaveTypes());
         }
