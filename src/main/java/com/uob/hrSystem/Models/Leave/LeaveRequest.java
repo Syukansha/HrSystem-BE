@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Leave {
+public class LeaveRequest {
 
 
     @Id

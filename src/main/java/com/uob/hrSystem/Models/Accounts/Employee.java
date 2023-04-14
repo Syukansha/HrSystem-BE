@@ -30,7 +30,11 @@ public class Employee {
     private int phoneNum;
     private String reportTo;
 
-    public Employee(String name,String username, String email, String password, String position, int annualLeave, int phoneNum, String reportTo) {
+
+    private Roles role;
+//    private String role;
+
+    public Employee(String name, String username, String email, String password, String position, int annualLeave, int phoneNum, String reportTo, Roles role) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -39,5 +43,6 @@ public class Employee {
         this.annualLeave = annualLeave;
         this.phoneNum = phoneNum;
         this.reportTo = reportTo;
+        this.role = role;
     }
 }
