@@ -8,8 +8,10 @@ import com.uob.hrSystem.Models.Leave.LeaveDetails;
 public interface LeaveApplication {
 
 //    Employee
-    public Employee registerEmpployee(Employee employee);
+    public Employee registerEmployee(Employee employee);
     Iterable<Employee> getEmployees();
+    Employee updateEmployee(int id, Employee employee);
+    public void deleteEmployee(int id);
 
 //    LeaveRequest
     public LeaveRequest requestLeave(int id, LeaveRequest leave);

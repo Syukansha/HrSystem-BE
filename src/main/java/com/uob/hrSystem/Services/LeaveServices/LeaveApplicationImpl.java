@@ -32,7 +32,7 @@ public class LeaveApplicationImpl implements LeaveApplication{
 
 //  employee
     @Override
-    public Employee registerEmpployee(Employee employee) {
+    public Employee registerEmployee(Employee employee) {
         employee = new Employee(employee.getEmployeeId(),employee.getName(),employee.getUsername(),employee.getEmail(),employee.getPassword(),employee.getPosition(),employee.getAnnualLeave(),employee.getPhoneNum(),employee.getReportTo(),employee.getRole());
         return employeeRepository.save(employee);
     }
@@ -42,7 +42,35 @@ public class LeaveApplicationImpl implements LeaveApplication{
         return employeeRepository.findAll();
     }
 
+    @Override
+    public Employee updateEmployee(int id, Employee employee) {
+        Optional<Employee> empData = employeeRepository.findById(id);
 
+        if(empData.isPresent()){
+            Employee _emp = empData.get();
+            _emp.setAnnualLeave(employee.getAnnualLeave());
+            _emp.setName(employee.getName());
+            _emp.setEmail(employee.getEmail());
+            _emp.setPhoneNum(employee.getPhoneNum());
+            _emp.setPosition(employee.getPosition());
+            _emp.setReportTo(employee.getReportTo());
+            _emp.setRole(employee.getRole());
+
+            return employeeRepository.save(_emp);
+        }else {
+            return null;
+        }
+
+    }
+
+    @Override
+    public void deleteEmployee(int id) {
+        Optional<Employee> empData = employeeRepository.findById(id);
+
+        if(empData.isPresent()){
+            employeeRepository.deleteById(id);
+        }
+    }
 
 
     //    LeaveRequest

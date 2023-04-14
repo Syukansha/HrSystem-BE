@@ -31,12 +31,30 @@ public class LeaveServiceController {
     @PostMapping("/register-employee")
     private ResponseEntity<Employee> registerEmployee(@RequestBody Employee employee){
         try {
-            return ResponseEntity.ok().body(leaveApplication.registerEmpployee(employee));
+            return ResponseEntity.ok().body(leaveApplication.registerEmployee(employee));
         }
         catch (Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PatchMapping("/update-employee/{id}")
+    private ResponseEntity<Employee> updateEmployee(@PathVariable int id,@RequestBody Employee employee){
+        try {
+            return ResponseEntity.ok().body(leaveApplication.updateEmployee(id, employee));
+        }
+        catch (Exception e){
+            return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping("/delete-employee/{id}")
+    private void updateEmployee(@PathVariable int id){
+      leaveApplication.deleteEmployee(id);
+
+    }
+
+   
 
     @GetMapping("/employees")
     private ResponseEntity<Iterable<Employee>> getEmployees(){
