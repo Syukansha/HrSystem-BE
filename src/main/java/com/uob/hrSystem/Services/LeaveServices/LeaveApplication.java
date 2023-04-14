@@ -1,9 +1,8 @@
 package com.uob.hrSystem.Services.LeaveServices;
 
-import com.uob.hrSystem.Models.Employee;
-import com.uob.hrSystem.Models.Leave;
-import com.uob.hrSystem.Models.LeaveTypeCategory;
-import org.springframework.stereotype.Service;
+import com.uob.hrSystem.Models.Accounts.Employee;
+import com.uob.hrSystem.Models.Leave.LeaveRequest;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 
 
 public interface LeaveApplication {
@@ -12,9 +11,9 @@ public interface LeaveApplication {
     public Employee registerEmpployee(Employee employee);
     Iterable<Employee> getEmployees();
 
-//    Leave
-    public Leave requestLeave(int id,Leave leave);
-    public Leave updateStatus(int svId,int empId,int leaveId, Leave leave);
-    public void addLeaveType(LeaveTypeCategory leaveTypeCategory);
-    public Iterable<LeaveTypeCategory> getLeaveTypes();
+//    LeaveRequest
+    public LeaveRequest requestLeave(int id, LeaveRequest leave);
+    public LeaveRequest updateStatus(int svId, int empId, int leaveId, LeaveRequest leave);
+    public void addLeaveType(LeaveDetails leaveTypeCategory);
+    public Iterable<LeaveDetails> getLeaveTypes();
 }

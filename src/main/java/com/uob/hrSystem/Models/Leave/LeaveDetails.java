@@ -1,4 +1,4 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Leave;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class LeaveTypeCategory {
+public class LeaveDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int typeId;

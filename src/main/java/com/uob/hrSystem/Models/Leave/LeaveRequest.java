@@ -1,5 +1,6 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Leave;
 
+import com.uob.hrSystem.Models.Accounts.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Leave {
+public class LeaveRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int leaveId;

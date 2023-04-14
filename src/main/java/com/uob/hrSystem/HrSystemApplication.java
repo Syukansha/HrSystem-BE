@@ -1,6 +1,6 @@
 package com.uob.hrSystem;
 
-import com.uob.hrSystem.Models.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 import com.uob.hrSystem.Services.LeaveServices.LeaveApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,7 +19,7 @@ public class HrSystemApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		LeaveTypeCategory leaveTypeCategory = new LeaveTypeCategory();
+		LeaveDetails leaveTypeCategory = new LeaveDetails();
 		leaveApplication.addLeaveType(leaveTypeCategory);
 
 	}

@@ -1,8 +1,8 @@
 package com.uob.hrSystem.Controllers;
 
-import com.uob.hrSystem.Models.Employee;
-import com.uob.hrSystem.Models.Leave;
-import com.uob.hrSystem.Models.LeaveTypeCategory;
+import com.uob.hrSystem.Models.Accounts.Employee;
+import com.uob.hrSystem.Models.Leave.LeaveRequest;
+import com.uob.hrSystem.Models.Leave.LeaveDetails;
 import com.uob.hrSystem.Repositories.Leave.LeaveRepository;
 import com.uob.hrSystem.Services.LeaveServices.LeaveApplication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,9 +49,9 @@ public class LeaveServiceController {
     }
 
 
-//    Leave
+//    LeaveRequest
     @GetMapping("/leave-types")
-    private ResponseEntity<Iterable<LeaveTypeCategory>> getLeaveTypes(){
+    private ResponseEntity<Iterable<LeaveDetails>> getLeaveTypes(){
         try {
             return ResponseEntity.ok().body(leaveApplication.getLeaveTypes());
         }
@@ -61,7 +61,7 @@ public class LeaveServiceController {
     }
 
     @PostMapping("/leave-request/employee/{id}")
-    private ResponseEntity<Leave> requestLeave(@PathVariable int id,@RequestBody Leave leave){
+    private ResponseEntity<LeaveRequest> requestLeave(@PathVariable int id, @RequestBody LeaveRequest leave){
         try {
             return ResponseEntity.ok().body(leaveApplication.requestLeave(id, leave));
         }
@@ -71,7 +71,7 @@ public class LeaveServiceController {
     }
 
     @PatchMapping("/update-request/{svId}/{empId}/{leaveId}")
-    private ResponseEntity<Leave> updateRequest(@PathVariable int svId,@PathVariable int empId,@PathVariable int leaveId, Leave leave){
+    private ResponseEntity<LeaveRequest> updateRequest(@PathVariable int svId, @PathVariable int empId, @PathVariable int leaveId, LeaveRequest leave){
         try {
             return ResponseEntity.ok().body(leaveApplication.updateStatus(svId,empId,leaveId,leave));
         }
@@ -81,7 +81,7 @@ public class LeaveServiceController {
     }
 
     @GetMapping("/leave-transaction/employee/{id}")
-    private ResponseEntity<List<Leave>> getListLeave(@PathVariable int id){
+    private ResponseEntity<List<LeaveRequest>> getListLeave(@PathVariable int id){
         try {
             return ResponseEntity.ok().body(leaveRepository.getListLeave(id));
         }

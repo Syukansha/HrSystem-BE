@@ -1,4 +1,4 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Accounts;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

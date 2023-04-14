@@ -1,4 +1,4 @@
-package com.uob.hrSystem.Models;
+package com.uob.hrSystem.Models.Leave;
 
 public enum LeaveType {
     ANNUAL_LEAVE,
