@@ -1,10 +1,8 @@
 package com.uob.hrSystem.Models.Leave;
 
-<<<<<<<< HEAD:src/main/java/com/uob/hrSystem/Models/Leave/Leave.java
-import com.uob.hrSystem.Models.Employee.Employee;
-========
+
 import com.uob.hrSystem.Models.Accounts.Employee;
->>>>>>>> features/jwt-security:src/main/java/com/uob/hrSystem/Models/Leave/LeaveRequest.java
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

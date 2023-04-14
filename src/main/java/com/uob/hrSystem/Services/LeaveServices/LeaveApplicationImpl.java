@@ -47,11 +47,9 @@ public class LeaveApplicationImpl implements LeaveApplication{
 
     //    LeaveRequest
     @Override
-<<<<<<< HEAD
-    public Leave requestLeave(int id, Leave leave) {
-=======
+
     public LeaveRequest requestLeave(int id, LeaveRequest leave) {
->>>>>>> features/jwt-security
+
 
         Optional<Employee> employeeData = employeeRepository.findById(id);
         if(employeeData.isPresent()){
