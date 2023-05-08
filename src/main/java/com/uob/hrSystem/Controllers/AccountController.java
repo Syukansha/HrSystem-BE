@@ -24,4 +24,13 @@ public class AccountController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PatchMapping("/edit/id/{id}")
+    private ResponseEntity<Users> updateAccount(@PathVariable long id, @RequestBody Users users){
+        try {
+            return ResponseEntity.ok().body(accountApplication.updateAccount(users,id));
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

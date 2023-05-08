@@ -4,4 +4,5 @@ import com.uob.hrSystem.Models.Account.Users;
 
 public interface AccountApplication {
     Users addAccount(Users users);
+    Users updateAccount(Users users, long id);
 }
