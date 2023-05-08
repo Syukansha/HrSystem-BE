@@ -1,4 +1,4 @@
-package com.uob.hrSystem.Models.Department;
+package com.uob.hrSystem.Models.Account.Vendor;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,16 +8,15 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
-public class Departments {
+public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "DEPARTMENTS")
-    private DepartmentTypes departmentTypes;
+    private VendorTypes vendorTypes;
 }
